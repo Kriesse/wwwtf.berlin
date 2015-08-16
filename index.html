@@ -13,9 +13,11 @@ title: wwwtf.berlin
   {% for post in site.posts reversed %}
     <li class="eventlist-element">
       {% if post.href %}
-        <a class="eventlist-element__link" href="{{ post.href }}">
+        <span class="eventlist-element__link">
+        <!-- <a class="eventlist-element__link" href="{{ post.href }}"> -->
       {% else %}
-        <a class="eventlist-element__link" href="{{ post.url | prepend: site.baseurl }}">
+        <span class="eventlist-element__link">
+        <!-- <a class="eventlist-element__link" href="{{ post.url | prepend: site.baseurl }}"> -->
       {% endif %}
       {% if post.date == previousDate %}
         <time datetime="{{ post.date | date: "%Y-%m-%d" }}"class="eventlist-element__date eventlist-element--is-hidden">
@@ -31,10 +33,17 @@ title: wwwtf.berlin
       {% assign previousDate = post.date %}
           <div class="eventlist-elemnt-infowrap">
             <span class="eventlist-element__title">{{ post.title }}</span>
-            <span class="eventlist-element__venue">{{ post.venue }}</span><span class="eventlist-element__time">{{ post.time }}</span><span class="eventlist-element__ticket">{{ post.ticket }}</span>
+            <span class="wtf-eventlist-element__show-additional-link">more info</span>
+              <!-- additional information -->
+              <div class="wtf-eventlist-element-additional-info is-hidden">
+                <span class="eventlist-element__venue">{{ post.venue }}</span>
+                <span class="eventlist-element__time">{{ post.time }}</span>
+                <span class="eventlist-element__ticket">{{ post.ticket }}</span>
+              </div>
+              <!-- /additional information -->
           </div>
-          <span class="eventlist-element__bullets"></span>
-        </a>
+          <!-- <span class="eventlist-element__bullets"></span> -->
+        </a> <!-- eventlist-element__link -->
     </li>
   {% endfor %}
   <li class="eventlist-element">
@@ -45,7 +54,7 @@ title: wwwtf.berlin
       <div class="eventlist-elemnt-infowrap">
         <span class="eventlist-element__title">Bring Your Own Event</span>
       </div>
-      <span class="eventlist-element__bullets"></span>
+      <!-- <span class="eventlist-element__bullets"></span> -->
     </a>
   </li>
 </ol>

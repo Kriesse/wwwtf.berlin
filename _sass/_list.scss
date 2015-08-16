@@ -8,6 +8,7 @@
 .eventlist-element {
   margin-bottom: 1.5rem;
   list-style: none;
+  position: relative;
   &:hover .eventlist-element__bullets,
   &:hover .eventlist-element__bullets:before,
   &:hover .eventlist-element__bullets:after {
@@ -72,7 +73,17 @@
   padding-left: 1rem;
   border-left: 1px solid $font-color;
   max-width: 21.153846154em;
+  // position: relative;
 }
+
+.wtf-eventlist-element__show-additional-link {
+  position: absolute;
+  top: 16px;
+  right: 0;
+  font-size: 0.7em;
+}
+
+
 
 .eventlist-element__title {
   display: block;
@@ -128,4 +139,9 @@
       top: 0;
     }
   }
+}
+
+
+.is-hidden {
+  display: none;
 }

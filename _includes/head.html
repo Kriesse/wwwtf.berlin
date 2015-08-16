@@ -16,4 +16,19 @@
     ga('create', 'UA-53520995-1', 'auto');
     ga('send', 'pageview');
   </script>
+
+  <script type="text/javascript" src="{{ "/vendor/jquery-2.1.4.min.js" | prepend: site.baseurl }}"></script>
+  <!-- <link rel="stylesheet" href="{{ "/vendor/mdl/material.min.css" | prepend: site.baseurl }}"> -->
+  <!-- <script type="text/javascript" src="{{ "/vendor/mdl/material.min.js" | prepend: site.baseurl }}"></script> -->
 </head>
+
+<script type="text/javascript">
+  $( document ).ready( function () {
+    $( ".wtf-eventlist-element__show-additional-link" ).click(function() {
+      // $( "#target" ).click();
+      console.log( $(this).parent().children('.wtf-eventlist-element-additional-info') );
+      $(this).parent().children('.wtf-eventlist-element-additional-info').toggleClass('is-hidden');
+      $(this).remove();
+    });
+  });
+  </script>
